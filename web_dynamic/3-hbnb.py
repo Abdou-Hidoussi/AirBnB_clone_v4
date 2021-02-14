@@ -1,17 +1,27 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
-"""Flask app to generate complete html page containing location/amenity
-dropdown menus and rental listings"""
-from flask import Flask, render_template
+""" Starts a Flash Web Application """
 from models import storage
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from os import environ
+from flask import Flask, render_template
 import uuid
-app = Flask('web_dynamic')
-app.url_map.strict_slashes = False
+app = Flask(__name__)
+# app.jinja_env.trim_blocks = True
+# app.jinja_env.lstrip_blocks = True
 
 
-@app.route('/3-hbnb')
-def display_hbnb():
-    """Generate page with popdown menu of states/cities"""
+@app.teardown_appcontext
+def close_db(error):
+    """ Remove the current SQLAlchemy Session """
+    storage.close()
+
+
+@app.route('/3-hbnb/', strict_slashes=False)
+def hbnb():
+    """ HBNB is alive! """
     states = storage.all('State')
     amenities = storage.all('Amenity')
     places = storage.all('Place')
@@ -23,11 +33,6 @@ def display_hbnb():
                            cache_id=cache_id)
 
 
-@app.teardown_appcontext
-def teardown_db(*args, **kwargs):
-    """Close database or file storage"""
-    storage.close()
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
+    """ Main Function """
     app.run(host='0.0.0.0', port=5000)
