@@ -37,7 +37,7 @@
     <h4>&nbsp;</h4>
     <div class="popover">
       <ul>
-        {% for state in states %}
+        {% for state in states.values()|sort(attribute='name')  %}
         <li>
       <h2>{{ state.name }}:</h2>
       <ul>
@@ -62,7 +62,7 @@
     <h4>&nbsp;</h4>
     <div class="popover">
       <ul>
-        {% for amenity in amenities.values() %}
+        {% for amenity in amenities.values()sort(attribute='name') %}
         <li>
             <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">{{ amenity.name }}
           </li>
