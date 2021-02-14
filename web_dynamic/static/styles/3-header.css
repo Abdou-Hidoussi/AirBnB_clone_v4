@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 header {
     background: white;
     height: 70px;
@@ -20,3 +21,14 @@ header.api_status {
 header.api_status.available {
     background-color: #ff545f;
   }
+=======
+header {
+    height: 70px; 
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    background: white url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-position: 20px center;
+    flex-shrink: 0;
+}
+>>>>>>> 752e52e23c0fbb719cb2f7f9665845bd7b3f597f
