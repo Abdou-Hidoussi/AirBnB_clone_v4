@@ -36,7 +36,7 @@
 	  <h4>&nbsp;</h4>
 	  <div class="popover">
 	    <ul>
-	      {% for state in states.values()|sort(attribute='name') %}
+	      {% for state in states %}
 	      <li>
 			<h2>{{ state.name }}:</h2>
 			<ul>
