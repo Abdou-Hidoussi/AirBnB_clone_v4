@@ -1,6 +1,5 @@
 $(document).ready(function(){
-    const url = 'http://0.0.0.0:5001/api/v1/status/';
-    $.get(url, function (response) {
+    $.get("http://0.0.0.0:5001/api/v1/status/", function (response) {
       if (response.status === 'OK') {
         $('DIV#api_status').addClass('available');
       } else {
