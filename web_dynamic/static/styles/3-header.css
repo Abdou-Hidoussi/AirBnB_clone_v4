@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 header {
     background: white;
     height: 70px;
@@ -10,25 +9,20 @@ header .logo {
     left: 20px;
     height: 100%;
 }
-header.api_status {
-    margin-right: 20px;
-    border-radius: 50%;
-    height: 40px;
+#api_status{
     width: 40px;
-    background-color: #ccc;
+    height: 40px;
+    border-radius: 90%;
+    background: #cccccc;
+    float: right;
+    margin-right: 30px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-header.api_status.available {
-    background-color: #ff545f;
-  }
-=======
-header {
-    height: 70px; 
-    width: 100%;
-    border-bottom: 1px solid #CCCCCC;
-    background: white url(../images/logo.png);
-    background-repeat: no-repeat;
-    background-position: 20px center;
-    flex-shrink: 0;
+#api_status.available{
+
+        Background color: #ff545f;
+
 }
->>>>>>> 752e52e23c0fbb719cb2f7f9665845bd7b3f597f
