@@ -47,7 +47,7 @@
 	    <ul>
 			{% for amenity in amenities.values() | sort(attribute='name') %}
 	      <li>
-            <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">{{ amenity}}
+            <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">{{ amenity.name }}
           </li>
 	      {% endfor %}
 	    </ul>
